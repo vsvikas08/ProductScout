@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "clientapp",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "E:\\Borderfree\\client-app\\amplify\\backend\\api\\clientapp\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}

@@ -1,0 +1,9 @@
+type Content @model {
+    id: ID!
+    cid: String!
+    title: String!
+    desc: String!
+    sub: String!
+    img: String!
+    count: Int!
+}

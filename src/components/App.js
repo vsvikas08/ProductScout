@@ -1,16 +1,17 @@
-import React from "react";
 import ContentList from "./ContentList";
 import Navbar from "./Navbar";
+import Amplify from "aws-amplify";
+import awsExports from "../aws-exports";
 
-class App extends React.Component {
-    render() {
-        return (
-            <div className="app">
-                <Navbar />
-                <ContentList />
-            </div>
-        );
-    }
+Amplify.configure(awsExports);
+
+function App() {
+    return (
+        <div className="app">
+            <Navbar />
+            <ContentList />
+        </div>
+    );
 }
 
 export default App;
