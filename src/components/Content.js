@@ -5,7 +5,10 @@ const Content = (props) => {
     // console.log("Props", props);
     const { product } = props;
     return (
-        <div className="content">
+        <div
+            className="content"
+            onClick={() => props.handleClick(product.cid, product.cnt)}
+        >
             <NavLink className="nav-link" to={`/detail/${product.cid}`}>
                 <img className="content-img" src={product.img} />
                 <h3 className="content-title">{product.title}</h3>
