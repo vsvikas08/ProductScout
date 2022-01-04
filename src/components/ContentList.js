@@ -21,11 +21,20 @@ const ContentList = (props) => {
                     {/* <button id="search">Search</button> */}
                 </div>
             </div>
-            {/* <ContentDetail /> */}
             <div className="content-list">
-                {product.map((item, idx) => {
+                {product
+                    .filter((val) => {
+                        return val.title
+                            .toLowerCase()
+                            .includes(searchTerm.toLowerCase());
+                    })
+                    .map((item, idx) => {
+                        return <Content product={item} key={idx} />;
+                    })}
+
+                {/* {product.map((item, idx) => {
                     return <Content product={item} />;
-                })}
+                })} */}
             </div>
         </div>
     );
