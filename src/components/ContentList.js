@@ -5,7 +5,7 @@ import ContentDetail from "./ContentDetail";
 const ContentList = (props) => {
     // console.log("props", props);
     const { product } = props.state;
-    console.log("product", product);
+    // console.log("product", product);
     const [searchTerm, setSearchTerm] = useState("");
 
     // function handleClick(product) {

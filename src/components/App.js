@@ -37,7 +37,7 @@ class App extends React.Component {
     }
 
     handleClick = (id, cnt) => {
-        console.log("clicked", id, cnt);
+        // console.log("clicked", id, cnt);
         const newCnt = String(parseInt(cnt) + 1);
         try {
             const response = axios.patch(baseUrl, {
@@ -45,16 +45,12 @@ class App extends React.Component {
                 updateKey: "cnt",
                 updateValue: newCnt,
             });
-            console.log("Response", response);
+            // console.log("Response", response);
         } catch (e) {
             console.log("Error");
         }
     };
-    handleTime = () => {
-        setTimeout(function () {
-            console.log("Time out");
-        }, 4000);
-    };
+
     render() {
         return (
             <div className="app">
