@@ -18,6 +18,7 @@ code {
 
 .nav {
     background: black;
+    width: 100vw;
     height: 70px;
     padding: 10px;
     box-sizing: border-box;
@@ -51,6 +52,11 @@ code {
     position: relative;
     top: -1px;
 }
+#key {
+    width: 70vw;
+    display: flex;
+    margin: auto 0;
+}
 
 .content-list {
     position: absolute;
@@ -82,12 +88,16 @@ code {
 .content-detail {
     padding: 20px;
     display: inline-flex;
+    flex-wrap: wrap;
 }
 .detail-img {
     width: 400px;
     height: 600px;
     object-fit: cover;
     object-position: center;
+}
+.left-content {
+    float: left;
 }
 .right-content {
     padding-left: 30px;
