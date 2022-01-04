@@ -1,9 +1,11 @@
+import { NavLink } from "react-router-dom";
 function Navbar() {
     return (
         <div className="nav">
             <div className="search-container">
-                <input />
-                <button id="search">Search</button>
+                <NavLink className="home" to="/">
+                    Home
+                </NavLink>
             </div>
         </div>
     );

@@ -7,6 +7,13 @@ const ContentList = (props) => {
     const { product } = props.state;
     console.log("product", product);
     const [searchTerm, setSearchTerm] = useState("");
+
+    // function handleClick(product) {
+    //     // setTimeout(function () {
+    //     //     console.log("clicked", product);
+    //     // }, 5000);
+    //     // console.log("clicked", cid);
+    // }
     return (
         <div>
             <div className="nav">
@@ -29,7 +36,13 @@ const ContentList = (props) => {
                             .includes(searchTerm.toLowerCase());
                     })
                     .map((item, idx) => {
-                        return <Content product={item} key={idx} />;
+                        return (
+                            <Content
+                                product={item}
+                                key={idx}
+                                handleClick={props.handleClick}
+                            />
+                        );
                     })}
 
                 {/* {product.map((item, idx) => {

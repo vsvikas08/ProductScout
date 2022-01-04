@@ -1,6 +1,8 @@
 import ContentList from "./ContentList";
 import Navbar from "./Navbar";
 import React, { useEffect, useState } from "react";
+import ContentDetail from "./ContentDetail";
+import { Route } from "react-router-dom";
 
 class App extends React.Component {
     state = {
@@ -19,11 +21,26 @@ class App extends React.Component {
                 // console.log("State", this.state);
             });
     }
+
+    handleClick = (product) => {};
+    handleTime = () => {
+        setTimeout(function () {
+            console.log("Time out");
+        }, 4000);
+    };
     render() {
         return (
             <div className="app">
                 {/* <Navbar /> */}
-                <ContentList state={this.state} />
+                <Route exact path="/">
+                    <ContentList
+                        state={this.state}
+                        handleClick={this.handleClick}
+                    />
+                </Route>
+                <Route path="/detail/:id">
+                    <ContentDetail product={this.state} />
+                </Route>
             </div>
         );
     }
