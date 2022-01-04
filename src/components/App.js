@@ -1,17 +1,32 @@
 import ContentList from "./ContentList";
 import Navbar from "./Navbar";
-import Amplify from "aws-amplify";
-import awsExports from "../aws-exports";
+import React, { useEffect, useState } from "react";
 
-Amplify.configure(awsExports);
-
-function App() {
-    return (
-        <div className="app">
-            <Navbar />
-            <ContentList />
-        </div>
-    );
+class App extends React.Component {
+    state = {
+        product: [],
+    };
+    componentDidMount() {
+        fetch(
+            "https://xmf90s7q72.execute-api.ap-south-1.amazonaws.com/prod/products"
+        )
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                this.setState({
+                    product: data.products,
+                });
+                // console.log("State", this.state);
+            });
+    }
+    render() {
+        return (
+            <div className="app">
+                {/* <Navbar /> */}
+                <ContentList state={this.state} />
+            </div>
+        );
+    }
 }
 
 export default App;
