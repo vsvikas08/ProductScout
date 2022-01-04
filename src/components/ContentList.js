@@ -23,23 +23,6 @@ const ContentList = (props) => {
             </div>
             {/* <ContentDetail /> */}
             <div className="content-list">
-                {console.log("Search", { searchTerm })};
-                {/* {product
-                    .filter((val) => {
-                        // if (searchTerm === "") return val;
-                        // else if (
-                        //     val.name
-                        //         .toLowerCase()
-                        //         .includes(searchTerm.toLowerCase())
-                        // )
-                        //     return val;
-                        return val.title
-                            .toLowerCase()
-                            .includes(searchTerm.toLowerCase());
-                    })
-                    .map((item, idx) => {
-                        return <Content product={item} />;
-                    })} */}
                 {product.map((item, idx) => {
                     return <Content product={item} />;
                 })}
